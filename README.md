@@ -1,3 +1,7 @@
 
-Calcl.js library
+# Calc.js library
 ====================
+
+A simple wrapper for mathematical operations
+
+## Operations
