@@ -5,11 +5,14 @@ describe("Calc", function() {
 
   beforeEach(function() {
     calc = new Calc();
+    calcMockData = {
+      num  : 5,
+      num2 : 10
+    }
   });
-
-  it("'calc' sea igual al prototipo", function(){
-    expect(calc).toEqual(Calc.prototype);
+/*
+  it("'_parse()' devuelva lo esperado", function(){
+    expect(calc.parse(calcMockData.num, calcMockData.num2)).toEqual()
   });
-
-
+*/
 });
