@@ -10,7 +10,9 @@ describe("Utils", function() {
       num2 : "10.4",
       numQuotes : "4,2",
       num3 : true,
-      num4 : {}
+      num4 : {},
+      num5 : 4.5688888888,
+      num6 : 5
     }
     //console.log(typeof utils.parseNum(utilsMockData.num));
   });
@@ -22,5 +24,11 @@ describe("Utils", function() {
     expect(utils.parseNum(utilsMockData.numQuotes)).toEqual(4.2);
     expect(utils.parseNum(utilsMockData.num)).toEqual(5.2);
   });
+
+  it("'round()' devuelve lo esperado", function(){
+    expect(utils.round(utilsMockData.num5)).toEqual(4.57);
+    expect(utils.round(utilsMockData.num6)).toEqual(5);
+  });
+
 
 });
