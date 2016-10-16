@@ -18,6 +18,7 @@ describe("Utils", function() {
   });
 
   it("'parse(num)' devuelve lo esperado", function(){
+    expect(utils.parseNum(utilsMockData.num6)).toEqual(5);
     expect(utils.parseNum(utilsMockData.num3)).toBeLessThan(1);
     expect(utils.parseNum(utilsMockData.num3)).toBeGreaterThan(-1);
     expect(utils.parseNum(utilsMockData.num4)).toEqual(0);
