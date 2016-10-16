@@ -42,3 +42,25 @@ Calc.prototype.minus = function(op1, op2){
     return this.utils.round(this.utils.parseNum(num1) - this.utils.parseNum(num2));
   }
 }
+
+
+Calc.prototype.times = function(op1, op2){
+  console.log(op2);
+  //var num2 = num || null;
+  console.log(op1);
+  console.log(typeof op1 == 'object');
+  if(typeof op1 == 'object'){
+    var result = op1[0];
+    console.log("array!!!");
+    for (var i = 1; i < op1.length; i++) {
+      console.log(op1[i]);
+      var num1 = this.utils.parseNum(op1[i], false);
+      console.log(op2);
+      result = this.utils.round(result * num1);
+      console.log(result);
+    }
+  }else if(typeof op1 == 'number' && typeof op2 == 'number'){
+    result = this.utils.round(this.utils.parseNum(op1) * this.utils.parseNum(op2));
+  }
+  return result;
+}

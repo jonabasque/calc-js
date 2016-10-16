@@ -24,4 +24,9 @@ describe("Calc", function() {
     expect(calc.minus(calcMockData.num1, calcMockData.nums)).toEqual(NaN);
   });
 
+  it("'times()' devuelva lo esperado", function(){
+    expect(calc.times(nums)).toEqual(567.84);
+    expect(calc.times(calcMockData.num1, calcMockData.num2)).toEqual(120);
+  });
+
 });
