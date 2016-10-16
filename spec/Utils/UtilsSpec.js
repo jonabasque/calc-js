@@ -12,16 +12,18 @@ describe("Utils", function() {
       num3 : true,
       num4 : {},
       num5 : 4.5688888888,
-      num6 : 5
+      num6 : 5,
+      num7 : []
     }
     //console.log(typeof utils.parseNum(utilsMockData.num));
   });
 
   it("'parse(num)' devuelve lo esperado", function(){
     expect(utils.parseNum(utilsMockData.num6)).toEqual(5);
-    expect(utils.parseNum(utilsMockData.num3)).toBeLessThan(1);
-    expect(utils.parseNum(utilsMockData.num3)).toBeGreaterThan(-1);
-    expect(utils.parseNum(utilsMockData.num4)).toEqual(0);
+    expect(utils.parseNum(utilsMockData.num7)).toEqual(NaN);
+    expect(utils.parseNum(utilsMockData.num3, true)).toBeLessThan(1);
+    expect(utils.parseNum(utilsMockData.num3, true)).toBeGreaterThan(-1);
+    expect(utils.parseNum(utilsMockData.num4, true)).toEqual(0);
     expect(utils.parseNum(utilsMockData.numQuotes)).toEqual(4.2);
     expect(utils.parseNum(utilsMockData.num)).toEqual(5.2);
   });
