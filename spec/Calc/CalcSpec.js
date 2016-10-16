@@ -14,7 +14,8 @@ describe("Calc", function() {
   });
 
   it("'plus()' devuelva lo esperado", function(){
-    //expect(calc.sum(nums)).toEqual(19.6);
+    expect(calc.plus(nums)).toEqual(19.6);
+    expect(calc.plus(calcMockData.num1, calcMockData.num2)).toEqual(22);
   });
 
   it("'minus()'devuelva lo esperado", function(){

@@ -8,7 +8,7 @@ function Calc() {
     //this.parse = true;
 }
 
-Calc.prototype.sum = function(op1, op2){
+Calc.prototype.plus = function(op1, op2){
   console.log(op2);
   //var num2 = num || null;
   console.log(op1);
@@ -18,7 +18,7 @@ Calc.prototype.sum = function(op1, op2){
     console.log("array!!!");
     for (var i = 1; i < op1.length; i++) {
       console.log(op1[i]);
-      var num1 = this.utils.parseNum(op1[i]);
+      var num1 = this.utils.parseNum(op1[i], true);
       console.log(op2);
       result = this.utils.round(result + num1);
       console.log(result);
