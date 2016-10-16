@@ -14,7 +14,13 @@ describe("Calc", function() {
   });
 
   it("'plus()' devuelva lo esperado", function(){
-    expect(calc.sum(nums)).toEqual(19.6);
+    //expect(calc.sum(nums)).toEqual(19.6);
+  });
+
+  it("'minus()'devuelva lo esperado", function(){
+    console.log("num1 desde expect: "+ calcMockData.num1);
+    expect(calc.minus(calcMockData.num1, calcMockData.num2)).toEqual(2);
+    expect(calc.minus(calcMockData.num1, calcMockData.nums)).toEqual(NaN);
   });
 
 });

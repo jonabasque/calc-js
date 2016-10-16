@@ -8,23 +8,37 @@ function Calc() {
     //this.parse = true;
 }
 
-Calc.prototype.sum = function(nums, num){
-  console.log(num);
+Calc.prototype.sum = function(op1, op2){
+  console.log(op2);
   //var num2 = num || null;
-	var result = nums[0];
-  console.log(nums);
-  console.log(typeof nums == 'object');
-	if(typeof nums == 'object'){
+  console.log(op1);
+  console.log(typeof op1 == 'object');
+  if(typeof op1 == 'object'){
+    var result = op1[0];
     console.log("array!!!");
-    for (var i = 1; i < nums.length; i++) {
-      console.log(nums[i]);
-      var sum2 = this.utils.parseNum(nums[i]);
-      console.log(sum2);
-      result = this.utils.round(result + sum2);
+    for (var i = 1; i < op1.length; i++) {
+      console.log(op1[i]);
+      var num1 = this.utils.parseNum(op1[i]);
+      console.log(op2);
+      result = this.utils.round(result + num1);
       console.log(result);
     }
-	}else{
-		result = this.utils.round(this.utils.parseNum(nums) + this.utils.parseNum(num));
-	}
+  }else if(typeof op1 == 'number' && typeof op2 == 'number'){
+    result = this.utils.round(this.utils.parseNum(op1) + this.utils.parseNum(op2));
+  }
   return result;
+}
+
+Calc.prototype.minus = function(op1, op2){
+  console.log(op1);//minuendo
+  console.log(op2); //substraendo
+  var num1 = this.utils.parseNum(op1);
+  var num2 = this.utils.parseNum(op2);
+  console.log(num1);//minuendo
+  console.log(num2); //substraendo
+	if(Number.isNaN(num1) || Number.isNaN(num2)){
+		return NaN;
+	}else{
+    return this.utils.round(this.utils.parseNum(num1) - this.utils.parseNum(num2));
+  }
 }
