@@ -9,7 +9,8 @@ describe("Calc", function() {
     calcMockData = {
       nums  : [5, "5,2", "4.2", "5.2R", true, {}],
       num1  : 12,
-      num2  : 10
+      num2  : 10,
+      num3  :  3
     }
   });
 
@@ -27,6 +28,11 @@ describe("Calc", function() {
   it("'times()' devuelva lo esperado", function(){
     expect(calc.times(nums)).toEqual(567.84);
     expect(calc.times(calcMockData.num1, calcMockData.num2)).toEqual(120);
+  });
+
+  it("'tdivided()' devuelva lo esperado", function(){
+    expect(calc.divided(calcMockData.num1, calcMockData.num3)).toEqual(4);
+    expect(calc.divided(calcMockData.num1, calcMockData.num2)).toEqual(1.2);
   });
 
 });

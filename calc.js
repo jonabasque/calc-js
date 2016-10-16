@@ -43,7 +43,6 @@ Calc.prototype.minus = function(op1, op2){
   }
 }
 
-
 Calc.prototype.times = function(op1, op2){
   console.log(op2);
   //var num2 = num || null;
@@ -63,4 +62,18 @@ Calc.prototype.times = function(op1, op2){
     result = this.utils.round(this.utils.parseNum(op1) * this.utils.parseNum(op2));
   }
   return result;
+}
+
+Calc.prototype.divided = function(op1, op2){
+  console.log(op1);//dividendo
+  console.log(op2); //divisor
+  var num1 = this.utils.parseNum(op1);
+  var num2 = this.utils.parseNum(op2);
+  console.log(num1);//dividendo
+  console.log(num2); //divisor
+  if(Number.isNaN(num1) || Number.isNaN(num2)){
+    return NaN;
+  }else{
+    return this.utils.round(this.utils.parseNum(num1) / this.utils.parseNum(num2));
+  }
 }
